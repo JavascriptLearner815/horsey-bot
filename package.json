@@ -1,7 +1,7 @@
 {
   "name": "horsey-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Join horsey spam team, the main team this bot was made for, but made free for you to support!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/JavascriptLearner815/horsey-bot/issues"
   },
-  "homepage": "https://github.com/JavascriptLearner815/horsey-bot#readme"
+  "homepage": "https://github.com/JavascriptLearner815/horsey-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
 }
