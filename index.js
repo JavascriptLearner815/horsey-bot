@@ -24,6 +24,16 @@ client.once('ready', () => {
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
+    if (message.content === 'horsey') {
+        const horseyEmoji = client.emojis.cache.get('742826710453452911');
+
+        if (!horseyEmoji) {
+            return message.channel.send('horsey');
+        }
+        
+        message.react(horseyEmoji);
+    }
+
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
