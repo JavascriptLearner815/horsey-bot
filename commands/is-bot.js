@@ -1,3 +1,5 @@
+const { clientID } = require('../config.json');
+
 module.exports = {
     name: 'is-bot',
     description: 'Check if someone is a bot.',
@@ -10,7 +12,11 @@ module.exports = {
         const user = message.mentions.users.first();
 
         if (user.bot) {
-            return message.reply('true.');
+            if (user.id === clientID) {
+                return message.reply('false, I\'m secretly a horsey god!!!');
+            } else {
+                return message.reply('true.');
+            }
         } else if (user.id === '339308628945141761') {
             return message.reply('true?');
         } else {
