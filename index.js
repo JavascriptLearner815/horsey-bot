@@ -84,4 +84,12 @@ client.on('message', message => {
     }
 });
 
+client.on('shardError', error => {
+    console.error('A websocket connection encountered an error:', error);
+});
+
+process.on('unhandledRejection', error => {
+    console.error('Unhandled promise rejection:', error);
+});
+
 client.login(token);
