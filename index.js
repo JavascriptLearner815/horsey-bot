@@ -22,13 +22,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.author.bot) return;
-
-    if (message.content === 'horsey') {
-        message.react('742826710453452911');
-    }
-
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
