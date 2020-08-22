@@ -22,6 +22,10 @@ module.exports = {
             return message.channel.send('You can\'t kick the owner.');
         }
 
+        if (member.hasPermision('KICK_MEMBERS')) {
+            return message.channel.send('You can\'t kick a moderator.');
+        }
+
         if (!reason) {
             reason = 'Unspecified';
         }
