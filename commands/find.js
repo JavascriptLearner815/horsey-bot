@@ -3,10 +3,12 @@ module.exports = {
     description: 'Look for a horsey.',
     args: false,
     usage: false,
-    guildOnly: false,
+    guildOnly: true,
     cooldown: 30,
     aliases: ['recruit'],
     execute(message, args) {
+        const userID = message.author.id;
+        const guildID = message.guild.id;
         const horseyOne = 'cactus';
         const horseyTwo = 'horse';
         const horseyThree = 'pony';
@@ -29,6 +31,12 @@ module.exports = {
         } else if (random === 15) {
             horsey = horseyFive;
         }
+
+        globalThis.userData.push({
+            user: userID,
+            guild: guildID,
+            item: horsey
+        });
 
         return message.reply(`You found a ${horsey} horsey!`);
     },

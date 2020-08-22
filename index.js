@@ -17,6 +17,8 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
+globalThis.userData = [];
+
 client.once('ready', () => {
     console.log('Ready!');
 });
