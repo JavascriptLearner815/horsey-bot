@@ -30,6 +30,6 @@ module.exports = {
             horsey = horseyFive;
         }
 
-        return message.reply(`You found a ${horsey} horsey!`);
+        return message.reply(`you found a ${horsey} horsey!`);
     },
 };
