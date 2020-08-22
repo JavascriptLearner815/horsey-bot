@@ -14,23 +14,15 @@ module.exports = {
         const { commands } = message.client;
 
         if (!args.length) {
-            const title = 'Horsey! List of all commands:';
+            data.push('Horsey! List of all commands:');
             data.push(commands.map(command => command.name).join(', '));
-            const footer = `\nHorseys, use \`${prefix}help <command name>\` to get info on a specific command!`;
-
-            const helpEmbed = new MessageEmbed()
-                .setTitle(title)
-                .setAuthor(message.author.username)
-                .setDescription(data)
-                .addField('User', message.author.username)
-                .setTimestamp()
-                .setFooter(footer);
+            data.push(`\nHorseys, use \`${prefix}help <command name>\` to get info on a specific command!`);
 
             try {
-                return message.channel.send(helpEmbed, { split: true });
+                return message.channel.send(data, { split: true });
             } catch (err) {
-                console.error('Could not send help embed!\n', err);
-                message.channel.send('Oh no! I couldn\'t send my embed!');
+                console.error('Could not send help message!\n', err);
+                message.channel.send('Oh no! I couldn\'t send my help message!');
             }
         }
 
@@ -48,7 +40,7 @@ module.exports = {
         if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
         
         data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
-        
-        message.channel.send(data, { split: true });
+
+        return message.channel.send(data, { split: true });
     },
 };
