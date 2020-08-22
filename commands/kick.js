@@ -26,6 +26,10 @@ module.exports = {
             return message.channel.send('You can\'t kick a moderator.');
         }
 
+        if (member.user.id === message.author.id) {
+            return message.channel.send('You can\'t kick yourself smfh, just leave the server.');
+        }
+
         if (!reason) {
             reason = 'Unspecified';
         }
