@@ -27,10 +27,6 @@ client.on('message', message => {
     if (message.content === 'horsey') {
         const horseyEmoji = client.emojis.cache.get('742826710453452911');
 
-        if (!horseyEmoji) {
-            return message.channel.send('horsey');
-        }
-        
         message.react(horseyEmoji);
     }
 
