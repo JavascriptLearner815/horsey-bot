@@ -18,16 +18,16 @@ module.exports = {
             return message.channel.send('I can\'t kick members.');
         }
 
+        if (member.user.id === message.author.id) {
+            return message.channel.send('You can\'t kick yourself smfh, just leave the server.');
+        }
+
         if (member.user.id === message.guild.ownerID) {
             return message.channel.send('You can\'t kick the owner.');
         }
 
         if (member.hasPermission('KICK_MEMBERS')) {
             return message.channel.send('You can\'t kick a moderator.');
-        }
-
-        if (member.user.id === message.author.id) {
-            return message.channel.send('You can\'t kick yourself smfh, just leave the server.');
         }
 
         if (!reason) {
