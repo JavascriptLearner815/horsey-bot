@@ -22,6 +22,10 @@ module.exports = {
             return message.channel.send('You can\'t kick yourself smfh, just leave the server.');
         }
 
+        if (member.user.bot) {
+            return message.channel.send('Bots are so nice and fun, why would you kick one? Poor bot.');
+        }
+
         if (member.user.id === message.guild.ownerID) {
             return message.channel.send('You can\'t kick the owner.');
         }
