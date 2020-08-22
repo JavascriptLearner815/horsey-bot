@@ -17,8 +17,6 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-globalThis.userData = [];
-
 client.once('ready', () => {
     console.log('Ready!');
 });
@@ -69,13 +67,8 @@ client.on('message', message => {
 
         if (now < expirationTime) {
             const timeLeft = (expirationTime - now) / 1000;
-            let cooldownReply;
-            if (timeLeft.toFixed(1) <= 1 && timeLeft.toFixed(1)) {
-                cooldownReply = `Command on cooldown! ${timeLeft.toFixed(1)} seconds`;
-            } else {
-                cooldownReply = `Command on cooldown! ${timeLeft.toFixed(1)} second`;
-            }
-            return message.channel.send(cooldownReply);
+
+            return message.channel.send(`Command on cooldown! ${timeLeft.toFixed(1)} second(s)`);
         }
 
         timestamps.set(message.author.id, now);
