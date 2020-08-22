@@ -24,10 +24,6 @@ client.once('ready', () => {
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    if (!message.guild.me.hasPermission('VIEW_CHANNEL') || !message.guild.me.hasPermission('SEND_MESSAGES')) {
-        return console.log(`I can't send messages in ${message.guild.name}!`);
-    }
-
     const args = message.content.slice(prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
@@ -38,6 +34,10 @@ client.on('message', message => {
 
     if (command.guildOnly && message.channel.type === 'dm') {
         return message.reply('That command is not supported in DMs.');
+    }
+
+    if (!message.guild.me.hasPermission('VIEW_CHANNEL') || !message.guild.me.hasPermission('SEND_MESSAGES')) {
+        return console.log(`I can't send messages in ${message.guild.name}!`);
     }
 
     if (command.args && !args.length) {
