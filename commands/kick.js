@@ -7,7 +7,7 @@ module.exports = {
     cooldown: 3,
     aliases: ['remove'],
     execute(message, args) {
-        const member = message.mentions.members.first() || args[0];
+        const member = message.mentions.members.first();
         let reason = args.slice(1).join(' ');
 
         if (!message.guild.member(message.author).hasPermission('KICK_MEMBERS')) {
