@@ -6,3 +6,6 @@ config.json
 .exe
 .dll
 .dat
+.vscode
+/.vscode
+settings.json
