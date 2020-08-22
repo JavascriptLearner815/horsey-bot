@@ -30,6 +30,10 @@ client.on('message', message => {
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
+    if (commandName === 'stats' || commandName === 'horsey') {
+        return message.channel.send(`Servers: ${client.guilds.cache.size}`);
+    }
+
     if (!command) return;
 
     if (command.guildOnly && message.channel.type === 'dm') {
