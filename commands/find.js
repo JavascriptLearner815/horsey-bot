@@ -6,6 +6,7 @@ module.exports = {
     guildOnly: true,
     cooldown: 30,
     aliases: ['recruit'],
+    cooldownMessage: 'You\'ve already looked for a horsey',
     execute(message, args) {
         const horseyOne = 'cactus';
         const horseyTwo = 'horse';
