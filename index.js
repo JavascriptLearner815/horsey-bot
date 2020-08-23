@@ -30,6 +30,10 @@ client.on('message', message => {
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
+    if (message.content === 'horsey') {
+        message.react('742826710453452911');
+    }
+
     if (commandName === 'stats' || commandName === 'horsey') {
         return message.channel.send(`Servers: ${client.guilds.cache.size}`);
     }
@@ -70,10 +74,10 @@ client.on('message', message => {
 
             return message.channel.send(`Command on cooldown! ${timeLeft.toFixed(1)} second(s)`);
         }
-
-        timestamps.set(message.author.id, now);
-        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
     }
+
+    timestamps.set(message.author.id, now);
+        setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 
     try {
         command.execute(message, args);
