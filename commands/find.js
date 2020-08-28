@@ -39,7 +39,7 @@ module.exports = {
             horsey = horseySeven;
         } else if (random >= 96 && random < 99) {
             horsey = horseyEight;
-        } else if (random >= 99 && random < 101) {
+        } else if (random >= 99 && random <= 101) {
             horsey = horseyNine;
         }
 
