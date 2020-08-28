@@ -11,6 +11,10 @@ module.exports = {
     execute(message, args) {
         const user = message.mentions.users.first();
 
+        if (!user) {
+            return message.reply('please mention only a single user, not a role, everyone, or here!');
+        }
+
         if (user.bot) {
             if (user.id === clientID) {
                 return message.reply('false, I\'m secretly a horsey god!!!');
