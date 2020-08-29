@@ -1,5 +1,3 @@
-const { getUserFromMention } = require('../get_user_from_mention.js');
-
 module.exports = {
     name: 'ban',
     description: 'Bans a member from the server forever. Go to the bans list and unban them there to unban them.',
@@ -9,7 +7,7 @@ module.exports = {
     cooldown: 3,
     aliases: ['out-horsey'],
     execute(message, args) {
-        const user = getUserFromMention(args[0]);
+        const user = message.mentions.users.first();
 
         if (!user) {
             return message.channel.send('You must only specify a single user!');

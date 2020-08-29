@@ -1,5 +1,4 @@
 const { clientID } = require('../config.json');
-const { getUserFromMention } = require('../get_user_from_mention.js');
 
 module.exports = {
     name: 'is-bot',
@@ -10,7 +9,7 @@ module.exports = {
     cooldown: 15,
     aliases: ['bot', 'check-bot'],
     execute(message, args) {
-        const user = getUserFromMention(args[0]);
+        const user = message.mentions.users.first();
 
         if (!user) {
             return message.reply('please mention only a single user, not a role, everyone, or here!');
