@@ -8,7 +8,7 @@ module.exports = {
 	guildOnly: false,
 	cooldown: 10,
 	cooldownMessage: 'Aww, slow down cat lover',
-	aliases: ['kitty', 'kitten', 'kitty-kitty-kitty', 'meow', 'hiss', 'purr', 'growl'],
+	aliases: ['kitty', 'kitten', 'kitty-kitty-kitty', 'meow', 'hiss', 'purr'],
 	async execute(message, args) {
 		const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
 
