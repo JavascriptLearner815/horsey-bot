@@ -9,13 +9,13 @@ module.exports = {
 	execute(message, args) {
 		const user = message.mentions.users.first();
 		let reason = args.slice(1).join(' ');
+		
+		if (!message.member.hasPermission('KICK_MEMBERS')) {
+			return message.reply('you don\'t have permission to do that!');
+		}
 
 		if (message.guild.member(user).hasPermission('KICK_MEMBERS')) {
 			return message.reply('you can\'t warn a moderator.');
-		}
-
-		if (!message.member.hasPermission('KICK_MEMBERS')) {
-			return message.reply('you don\'t have permission to do that!');
 		}
 
 		if (!user) {
