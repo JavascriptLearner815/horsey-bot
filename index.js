@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 }
 
 client.once('ready', () => {
-    client.user.setActivity('horsey help', { type: 'PLAYING' });
+    client.user.setActivity(`${prefix}help`, { type: 'PLAYING' });
     console.log('Ready!');
 });
 
