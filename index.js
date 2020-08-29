@@ -23,6 +23,8 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
+    if (message.webhookID) return;
+
     if (message.author.bot) return;
 
     if (message.content === 'horsey') {
@@ -103,5 +105,7 @@ client.on('shardError', error => {
 process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
 });
+
+
 
 client.login(token);
