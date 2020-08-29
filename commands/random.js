@@ -19,10 +19,6 @@ module.exports = {
 		if (!min) min = 0;
 		if (!max) max = 1;
 
-		if (typeof min !== 'number' || typeof max !== 'number') {
-			return message.reply('you need to specify a *number*.');
-		} 
-
 		const result = getRandomIntInclusive(min, max);
 
 		if (!result && result !== 0) {
