@@ -11,7 +11,7 @@ module.exports = {
 		let reason = args.slice(1).join(' ');
 
 		if (message.guild.member(user).hasPermission('KICK_MEMBERS')) {
-			return message.reply('you can\'t kick a moderator.');
+			return message.reply('you can\'t warn a moderator.');
 		}
 
 		if (!message.member.hasPermission('KICK_MEMBERS')) {
