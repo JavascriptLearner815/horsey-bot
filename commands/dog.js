@@ -8,7 +8,7 @@ module.exports = {
 	guildOnly: false,
 	cooldown: 10,
 	cooldownMessage: 'Aww, slow down dog lover',
-	aliases: ['fetch', 'puppy', 'puppie', 'doggo', 'pupper'],
+	aliases: ['fetch', 'puppy', 'puppie', 'doggo', 'pupper', 'doggie', 'bark', 'ruff', 'howl', 'growl', 'yip'],
 	async execute(message, args) {
 		const dog = await fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json());
 
