@@ -15,7 +15,7 @@ module.exports = {
 
 		if (isNaN(amount)) {
 			return message.reply('that isn\'t a valid number.');
-		} else if (amount < 2 || amount > 100) {
+		} else if (amount <= 1 || amount > 100) {
 			return message.reply('you must input a number between 1 and 99.');
 		}
 
