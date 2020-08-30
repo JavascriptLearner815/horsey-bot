@@ -5,7 +5,7 @@ module.exports = {
     usage: '<user> <reason>',
     guildOnly: true,
     cooldown: 3,
-    aliases: ['remove'],
+    aliases: ['boot'],
     execute(message, args) {
         const member = message.mentions.members.first();
         let reason = args.slice(1).join(' ');

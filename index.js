@@ -106,6 +106,6 @@ process.on('unhandledRejection', error => {
     console.error('Unhandled promise rejection:', error);
 });
 
-
+client.on('debug', console.debug);
 
 client.login(token);
