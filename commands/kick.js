@@ -10,6 +10,10 @@ module.exports = {
         const member = message.mentions.members.first();
         let reason = args.slice(1).join(' ');
 
+        if (!member) {
+            return message.channel.send('You must mention a single user.');
+        }
+
         if (!message.guild.member(message.author).hasPermission('KICK_MEMBERS')) {
             return message.channel.send('You don\'t have the permissions to kick, I\'m not a dumb horsey!');
         }

@@ -10,7 +10,7 @@ module.exports = {
         const user = message.mentions.users.first();
 
         if (!user) {
-            return message.channel.send('You must only specify a single user!');
+            return message.channel.send('You must mention a single user.');
         }
 
         let reason = args.slice(1).join(' ');
