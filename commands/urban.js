@@ -13,6 +13,10 @@ module.exports = {
 	cooldownMessage: 'Go read a book',
 	aliases: ['urban-dictionary', 'urban-dic'],
 	async execute(message, args) {
+		if (!message.channel.nsfw) {
+			return message.reply('don\'t try to get sex stories in non-NSFW channels.');
+		}
+
 		const query = querystring.stringify({ term: args.join(' ') });
 
 		const { list } = await fetch(`https://api.urbandictionary.com/v0/define?${query}`).then(response => response.json());
