@@ -23,12 +23,21 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-    if (message.webhookID) return;
-
-    if (message.author.bot) return;
+    if (message.webhookID || message.author.bot) return;
 
     if (message.content === 'horsey') {
-        message.react('742826710453452911');
+        return message.react('742826710453452911');
+    }
+
+    if (message.mentions.has(client.user)) {
+        const embed = new Discord.MessageEmbed()
+            .setColor('#0FFFF0')
+            .setAuthor(message.author)
+            .setTimestamp(Date.now())
+            .setTitle('Horsey!')
+            .setDescription(`My prefix is ${prefix}. Have fun!`);
+
+        return message.channel.send(embed);
     }
 
     if (!message.content.startsWith(prefix)) return;
