@@ -29,7 +29,7 @@ client.on('message', message => {
         return message.react('742826710453452911');
     }
 
-    if (message.mentions.has(client.user)) {
+    if (message.mentions.has(client.user) && !message.mentions.everyone) {
         const embed = new Discord.MessageEmbed()
             .setColor('#0FFFF0')
             .setAuthor(message.author)
