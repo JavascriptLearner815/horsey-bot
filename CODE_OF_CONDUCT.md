@@ -52,6 +52,13 @@ address, posting via an official social media account, or acting as an appointed
 representative at an online or offline event. Representation of a project may be
 further defined and clarified by project maintainers.
 
+Project spaces include:
+
+* Contributing to issues, pull requests, discussions, commits, etc. on this GitHub repository
+* Visiting the documentation site
+* Using the information in the wiki FAQ
+* Using the bot itself on Discord
+
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
