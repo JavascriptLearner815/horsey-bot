@@ -7,3 +7,12 @@ body {
   color: rgb(176, 167, 176);
   text-align: center;
 }
+.question, .answer {
+  cursor: help;
+}
+.question {
+  font-style: italic;
+}
+.answer {
+  font-weight: bold;
+}
