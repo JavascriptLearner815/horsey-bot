@@ -30,6 +30,8 @@ Examples of unacceptable behavior by participants include:
  address, without explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
  professional setting
+ 
+We do have an exception for swearing: You are permitted to do it **in small amounts**. Also, remember: These rules only apply to usage of writing to files, "talking" with the bot, etc. in the spaces defined in the _Scope_ section below.
 
 ## Our Responsibilities
 
