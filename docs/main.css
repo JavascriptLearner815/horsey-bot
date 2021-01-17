@@ -24,3 +24,14 @@ nav {
 nav a {
   margin-right: 20px;
 }
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: purple;
+  text-decoration: underline;
+}
