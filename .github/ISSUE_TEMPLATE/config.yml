@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Docs
+    url: https://javascriptlearner815.github.io/horsey-bot/
+    about: Read more information about the bot and stuff from the FAQ before you use support or create an issue!
+  - name: FAQ
+    url: https://github.com/JavascriptLearner815/horsey-bot/wiki
+    about: Read common questions before you use support or create an issue!
+  - name: Support
+    url: https://github.com/JavascriptLearner815/horsey-bot/discussions
+    about: Ask questions, engage with other contributors, and more!
+  - name: Rules
+    url: https://github.com/JavascriptLearner815/horsey-bot/blob/master/CODE_OF_CONDUCT.md
+    about: The guidelines to follow when actively contributing, visiting the docs, using the bot itself on Discord, etc.
